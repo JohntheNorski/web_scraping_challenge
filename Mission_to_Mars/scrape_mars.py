@@ -66,12 +66,5 @@ def scrape():
     }
     return master_dict
 
-    import pymongo
-
-    client = pymongo.MongoClient()
-    db = client.mars
-    col = db.data
-
-    col.insert_one(master_dict)
 
     #CREATE FINAL OUTPUT DICT
