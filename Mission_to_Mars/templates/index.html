@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 400px;
+    }
+    
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+    
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+    
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mars...</h1>
+      <p>Images, Data, Latest News</p>
+    </div>
+    <h1>Latest Article</h1>
+    <p>
+      <h3><strong>{{ mars.Article }}</strong></h3>
+      <h5><strong>{{ mars.Article_Description }}</strong></h5>
+    </p>
+    <br>
+    <h1>Images of Mars' Hemispheres: </h1>
+    <div class="gallery">
+      <img src={{ mars.Hemispheres.0.url }} width="600" height="600">
+      <div class="desc">{{ mars.Hemispheres.0.title }}</div>
+    </div>
+    <div class="gallery">
+      <img src={{ mars.Hemispheres.1.url }} width="600" height="600">
+      <div class="desc">{{ mars.Hemispheres.1.title }}</div>
+    </div>
+    <div class="gallery">
+      <img src={{ mars.Hemispheres.2.url }} width="600" height="600">
+      <div class="desc">{{ mars.Hemispheres.2.title }}</div>
+    </div>
+    <div class="gallery">
+      <img src={{ mars.Hemispheres.3.url }} width="600" height="600">
+      <div class="desc">{{ mars.Hemispheres.3.title }}</div>
+    </div>
+  </div>
+  <p>
+    <h2>Data Table:</h2>
+    <div>{{ mars.Data_Table|safe }}</div>
+  </p>
+</body>
+
+</html>
